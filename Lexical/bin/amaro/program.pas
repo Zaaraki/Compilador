@@ -5,4 +5,4 @@ var
 begin
 	valor1 := 10;
 end.
-{aaaaa
+{aaaaa}

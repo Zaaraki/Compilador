@@ -1,5 +1,6 @@
 package amaro;
 import java_cup.runtime.*;
+import java_cup.runtime.Symbol;
 
 %%
 
@@ -20,12 +21,13 @@ private Token createToken(String name, String value) {
 
 %}
 
-
+%cup
 %public
-%class LexicalAnalyzer
-%type Token
+%class Lexer
+%type Symbol
 %line
 %column
+
 
 
 BRANCO = [\n| |\t|\r]
@@ -89,5 +91,7 @@ MULTICOMM = "/*"~"*/"
 {ID}                         { imprimir("Identificador", yytext(), yyline); }
 {INTEIRO}			{ imprimir("Número Inteiro", yytext(), yyline); }
 {REAL}		{ imprimir("Número Real", yytext(), yyline); }
+
+<<EOF>> { return new Symbol( Sym.EOF ); }
 
 . { throw new RuntimeException("Caractere inválido " + yytext() + " na linha " + yyline + ", coluna " +yycolumn); }

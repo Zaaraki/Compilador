@@ -9,10 +9,11 @@ public class Generator {
 		String rootPath = Paths.get("").toAbsolutePath().toString();
 		String subPath = "/src/amaro/";
 
-		String file = rootPath + subPath + "language.lex";
+		String file = rootPath + subPath + "Lexer.lex";
 
 		File sourceCode = new File(file);
 		jflex.Main.generate(sourceCode);
+		
 
 	}
 }

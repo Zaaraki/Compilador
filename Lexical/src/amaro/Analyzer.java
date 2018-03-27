@@ -1,7 +1,8 @@
-package amaro;
+/*package amaro;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 
 public class Analyzer {
@@ -11,7 +12,7 @@ public class Analyzer {
 
 		String code = rootPath + subPath + "program.pas";
 		
-		LexicalAnalyzer lexical = new LexicalAnalyzer(new FileReader(code));
+		Lexer lexical = new Lexer(new FileReader(code));
 		
 		Token token;
 		
@@ -20,3 +21,4 @@ public class Analyzer {
 		}
 	}
 }
+*/
